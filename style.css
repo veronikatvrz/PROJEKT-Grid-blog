@@ -1,38 +1,45 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
-
-
-body {
-	margin: 0;
-	padding: 30px;
-	font-family:  'Alice', serif;
-	font-size: 18px;
-	line-height: 1.5;
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
 }
 
-h1, h2, h3 {
-	font-family: 'Kaushan Script', cursive;
-	font-weight: normal;
-	margin: 0;
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: "Alice", serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Kaushan Script", cursive;
+  font-weight: normal;
+  margin: 0;
 }
 
 blockquote {
-	font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 /* --------------------------------------------------- */
 
 /* barvy */
 :root {
-	--svetla: #edf3f5;
-	--seda: #b2bec3;
-	--tmava: #636e72;
-	--oranzova: #ee5a24;
-	--cervena: #ea2027;
-	--zluta: #f79f1f;
-	--zelena: #a3cb38;
-	--limetka: #c4e538;
+  --svetla: #edf3f5;
+  --seda: #b2bec3;
+  --tmava: #636e72;
+  --oranzova: #ee5a24;
+  --cervena: #ea2027;
+  --zluta: #f79f1f;
+  --zelena: #a3cb38;
+  --limetka: #c4e538;
 }
 
 /*
@@ -66,3 +73,113 @@ blockquote {
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
 
+.blog {
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  column-gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  grid-column: 2;
+}
+
+h1 {
+  color: var(--zelena);
+  text-align: left;
+  font-size: 86px;
+  margin-bottom: 80px;
+}
+
+.meta {
+  color: var(--seda);
+}
+
+p {
+  grid-column: 2;
+}
+
+h2 {
+  grid-column: 2;
+  text-align: left;
+  font-size: 52px;
+  color: var(--zelena);
+  margin-top: 30px;
+}
+
+.tip {
+  color: var(--tmava);
+  background-color: var(--svetla);
+  font-size: 16px;
+  padding: 15px;
+  margin-top: 20px;
+  height: max-content;
+  width: auto;
+}
+
+.tip-vlevo {
+  grid-column: 1;
+  text-align: right;
+  border-right: 2px solid var(--zluta);
+}
+
+.tip-vpravo {
+  grid-column: 3;
+  border-left: 2px solid var(--zluta);
+}
+
+.tip a {
+  color: var(--cervena);
+}
+
+.tip-vlevo img {
+  width: 130px;
+}
+
+figure {
+  grid-column: 1 / 4;
+  object-fit: cover;
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: var(--seda);
+}
+
+blockquote {
+  grid-column: 1 / 4;
+  text-align: center;
+  color: var(--seda);
+  font-size: 36px;
+}
+
+blockquote::before {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  background-color: var(--limetka);
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+blockquote::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  background-color: var(--limetka);
+  margin: auto;
+  margin-top: 20px;
+}
+
+footer {
+  grid-column: 2;
+  font-size: 14px;
+  color: var(--seda);
+  margin-top: 20px;
+}
+
+footer a {
+  color: var(--seda);
+}
